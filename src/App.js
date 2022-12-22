@@ -1,23 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
-
+import CatList from './CatList';
+import FavoriteList from './FavoriteList';
+import { useState } from 'react';
 function App() {
+  const [favorites, setFavorites] = useState([])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CatList favorites={favorites} setFavorites={setFavorites}/>
+      <FavoriteList favorites={favorites} setFavorites={setFavorites}/>
     </div>
   );
 }
